@@ -1,0 +1,6 @@
+.bt1, .bt2, .bt3{
+    border: 1px solid black;
+    width: 500px;
+    margin: 30px 30px;
+    padding: 10px 10px;
+}
