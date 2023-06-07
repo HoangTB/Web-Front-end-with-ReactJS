@@ -1,0 +1,21 @@
+.ul{
+    display: flex;
+    font-size: 12px;
+    font-style: italic;
+    color: rgb(205, 199, 199);
+    flex-wrap: wrap;
+    padding: 0px 50px 0px 30px;
+    margin-top: 40px;
+    column-gap: 15px;
+}
+.ul li{
+    list-style-type: none;
+    padding-top: 5px;
+}
+.content-footer{
+    margin: 20px 0px 0px 30px;
+    color:rgb(205, 199, 199);
+}
+.footer{
+    display: left;
+}

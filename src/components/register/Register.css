@@ -1,0 +1,92 @@
+.auth-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.auth-left {
+  flex: 0.3;
+  text-align: center;
+}
+
+.auth-right {
+  flex: 0.25;
+}
+
+.auth-left>img {
+  width: 380px;
+}
+
+.auth-more {
+  border: 1px solid rgb(215, 210, 210);
+  padding: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 13px;
+  text-align: center;
+}
+
+.auth-more>span {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.auth-more>span>a {
+  background: 0;
+  border: 0;
+  font-weight: bolder;
+  color: #0095f6;
+}
+
+.auth__more>span>button:hover {
+  cursor: pointer;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(215, 210, 210);
+  padding: 40px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.register>img {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.register>input {
+  border: 1px solid rgb(215, 210, 210);
+  border-radius: 10px;
+  padding: 12px;
+  outline: none !important;
+  margin-top: 10px;
+}
+
+
+.register>button {
+  padding: 12px;
+  border-radius: 10px;
+  border: 0;
+  font-weight: bolder;
+  color: white;
+  background-color: #0095f6;
+  margin-top: 10px;
+}
+
+.register>button:hover {
+  cursor: pointer;
+}
+
+.error-content {
+  text-align: left;
+  margin: 5px 0px 0px 3px;
+  font-size: 12px;
+  color: red;
+  font-weight: lighter;
+}

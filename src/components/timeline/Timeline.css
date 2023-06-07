@@ -1,0 +1,22 @@
+.timeline {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .timeline-left {
+    flex: 0.7;
+  }
+  
+  .timeline-right {
+    flex: 0.4;
+  }
+  
+
+  
+  @media (max-width: 1257px) {
+    
+    
+    .timeline-right {
+      display: none;
+    }
+  }

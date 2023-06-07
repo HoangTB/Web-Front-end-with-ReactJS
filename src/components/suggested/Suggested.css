@@ -1,0 +1,74 @@
+.suggestions {
+    margin-top: 30px;
+    margin-right: 20px;
+  }
+  
+  .suggestions-title {
+    color: grey;
+    font-weight: bold;
+    margin: 20px 0px 30px 50px;
+  }
+  
+  .username-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .username-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 7px;
+    gap: 5px;
+    letter-spacing: 0.5px;
+  }
+  
+  .relation {
+    color: grey;
+    font-size: 13px;
+  }
+  
+  .suggestions-username {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: 0 20px;
+  }
+  
+  .follow-button {
+    color: #0095f6;
+    background: 0;
+    border: 0;
+    margin-right: 5px;
+    text-align: center;
+  }
+  
+  .follow-button:hover {
+    cursor: pointer;
+  }
+  
+  .username {
+    font-weight: 600;
+    font-size: 15px;
+    color: black;
+  }
+  .icon-profile{
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    object-fit:cover;
+    font-size: 10px !important;
+    background-image: linear-gradient(to bottom right, #ff9900, #e0e54d9f);
+    border: 2px solid rgba(255, 0, 0, 0.989);
+  }
+
+  .content-footer{
+    margin-top: 40px;
+  }
+
+  .avatar-users {
+  font-size: 9px !important;
+  background-image: linear-gradient(to bottom right, #ff9900, #e0e54d9f);
+  border: 1px solid rgba(255, 0, 0, 0.989);
+  letter-spacing: 1px;
+  }

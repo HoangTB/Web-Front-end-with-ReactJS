@@ -1,0 +1,53 @@
+.profilePages{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.profile-navi{
+    flex: 0.2;
+
+}
+.profile-profile{
+    flex: 0.7;
+    right: 0;
+
+}
+.profile-footer{
+    margin: 30px auto;
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+@media (max-width: 1257px) {
+    .profilePages {
+      gap: 20px;
+    }
+  
+    .profile-navi {
+      position: relative;
+      flex: 0.1;
+      width: 60px !important;
+    }
+  
+    .profile-profile {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      flex: 0.9;
+    }
+  
+  }
+  @media (max-width: 104px) {
+    .profile-profile {
+     flex:1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .profilePages {
+      display: flex;
+      flex-direction: column !important;
+    }
+  }
