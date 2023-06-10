@@ -58,7 +58,7 @@
     border-radius: 50%;
     object-fit:cover;
     font-size: 10px !important;
-    background-image: linear-gradient(to bottom right, #ff9900, #e0e54d9f);
+    background-image: linear-gradient(to bottom right, #ff7700, #ff861c,#ffffff);
     border: 2px solid rgba(255, 0, 0, 0.989);
   }
 
@@ -68,7 +68,7 @@
 
   .avatar-users {
   font-size: 9px !important;
-  background-image: linear-gradient(to bottom right, #ff9900, #e0e54d9f);
+  background-image: linear-gradient(to bottom right, #ff7700, #ff861c,#ffffff);
   border: 1px solid rgba(255, 0, 0, 0.989);
   letter-spacing: 1px;
   }

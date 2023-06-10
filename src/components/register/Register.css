@@ -54,7 +54,7 @@
 }
 
 .register>img {
-  width: 250px;
+  width: 280px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
@@ -75,7 +75,7 @@
   border: 0;
   font-weight: bolder;
   color: white;
-  background-color: #0095f6;
+  background-color:rgba(254, 118, 28, 0.989);
   margin-top: 10px;
 }
 

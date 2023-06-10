@@ -8,8 +8,6 @@ export const CallListPosts = createAsyncThunk('posts/getAllPosts',
     });
 
 
-
-
 const ListPostsSlice = createSlice({
     name: 'posts',
     initialState: [],

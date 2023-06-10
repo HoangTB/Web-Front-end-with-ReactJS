@@ -17,7 +17,7 @@
     height: 150px !important;
     border-radius: 50%;
     object-fit: cover;
-    background-image: linear-gradient(to bottom right, #ff9900, #e0e54d9f);
+    background-image: linear-gradient(to bottom right, #ff7700, #ff861c,#ffffff);
     border: 3px solid rgba(255, 0, 0, 0.989);
     color: rgba(255, 255, 255, 0.989) !important;
     font-size: 25px !important;
@@ -62,7 +62,7 @@
 .profile-logout {
     padding: 2px 15px 2px 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.8px;
@@ -151,7 +151,21 @@
     padding: 2px;
     border: 2px solid rgba(254, 118, 28, 0.989);
 }
+.profile-profile{
+    position: relative;
+}
+.profile-icon-delete{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    opacity: 0.3;
+}
 
+.profile-icon-delete:hover{
+    opacity: 1;
+    cursor: pointer;
+    color: #9f9f9f;
+}
 
 
 .profile- story-item-name {
@@ -162,7 +176,7 @@
 }
 
 .profile-navigation {
-    margin-top: 40px;
+   
     display: flex;
     gap: 40px;
     justify-content: center;
@@ -186,28 +200,29 @@
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     margin-top: 30px;
+
 }
 
 .profile-image-contents {
     width: 235px;
     height: 380px;
     object-fit: cover;
-    margin-top: 1px;
+    margin-top: 5px;
 
 
 }
 
-.profile-profile {
-    position: relative;
-}
 
 .profile-image-contents:hover{
     transform: scale(1.02);
     transition: all 0.3s ease;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.4;
 }
-
+.profile-story-name{
+    font-size: 14px;
+    color: grey;
+}
 @media (max-width:1042px) {
     .profile-image-contents {
         width: 200px;

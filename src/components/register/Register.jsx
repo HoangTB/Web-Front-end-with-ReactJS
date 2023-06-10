@@ -32,6 +32,8 @@ function Register() {
     setInputValue({
       ...inputValue,
       [e.target.name]: e.target.value,
+      active: 2,
+      admin:2
     })
 
   }
@@ -40,7 +42,7 @@ function Register() {
     if (inputValue.email !== '' && inputValue.user !== '' && inputValue.fullname !== '' && inputValue.password !== '') {
       try {
         await dispatch(register(inputValue)).unwrap();
-        toast.success('🦄 Wow so easy!', {
+        toast.success('Sign Up Success!', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -88,14 +90,14 @@ function Register() {
       <ToastContainer />
       <div className="auth-left">
         <img
-          src="https://i.imgur.com/P3Vm1Kq.png"
+          src="/login-4.png"
           alt="Instagram Screenshots"
         />
       </div>
       <div className='auth-right'>
         <div className="register">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/840px-Instagram_logo.svg.png"
+            src="/logo.png"
             alt=""
           />
           <input

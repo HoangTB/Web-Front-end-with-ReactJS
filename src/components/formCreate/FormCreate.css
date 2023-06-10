@@ -21,11 +21,12 @@
     margin: 0 auto;
     background-color: rgb(255, 254, 254);
     color: black;
-    padding: 20px 20px;
+    padding: 10px 10px 10px 10px;
     display: flex;
     flex-direction: column;
     text-align: center;
     position: fixed;
+    gap: 5px;
 }
 
 .create-form {
@@ -71,7 +72,7 @@
 
 .create-title>h3 {
     border-bottom: 1px solid rgb(210, 206, 206);
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     font-size: 25px !important;
 }
 
@@ -82,6 +83,7 @@
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
+    margin: 20px;
 }
 
 .icon-close {
@@ -95,7 +97,7 @@
 .create-from-user{
     width: 50px !important;
     height: 50px !important;    
-    background-image: linear-gradient(to bottom right, #ff9900, #e0e54d9f);
+    background-image: linear-gradient(to bottom right, #ff7700, #ff861c,#ffffff);
     border: 2px solid rgba(255, 0, 0, 0.989);
     font-size: 11px !important;
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar } from "@mui/material";
 import "./Post.css";
@@ -9,15 +9,25 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Detail from "../detail/Detail";
 import { Link } from "react-router-dom";
+import ListPosts from "../../api/ListPosts";
+import { useDispatch, useSelector } from "react-redux";
 
 const Post = (props) => {
   const [isShow, setIsShow] = useState(false);
-  const [isFavorite2, setIsFavorite2] = useState(false);
+  const [isFavorite2, setIsFavorite2] = useState(props.data.favorite);
+  const listPosts = useSelector((state) => state.listPosts);
+  const dispatch = useDispatch();
+  
   const handelClose = () => {
     setIsShow(false);
   };
   const handleFavoriteClick2 = () => {
-    setIsFavorite2(!isFavorite2);
+    const newFavorite = !isFavorite2;
+    setIsFavorite2(newFavorite);
+    const favoriteUpdate = {
+      favorite: newFavorite,
+    }
+    ListPosts.updateFavorite(props.data.id, favoriteUpdate).then();
   };
   return (
     <div className="post">
@@ -29,17 +39,21 @@ const Post = (props) => {
           isFavorite2={isFavorite2}
         />
       )}
-      <Link className="post-header" to={`/profile/${props.data.id}`}>
+      <Link className="post-header" to={`/profile/${props.data.userId}`}>
         <div className="post-headerAuthor">
           <Avatar style={{ marginRight: "10px" }} className="post-img-name">
             {props.data.user.charAt(0).toUpperCase()}
           </Avatar>{" "}
-          {props.data.user} • <span>1d</span>
+          <span className="post-header-name">{props.data.user}</span>
         </div>
         <MoreHorizIcon />
       </Link>
       <div className="post-image">
-        <img src={props.data.image} alt="Post Image" />
+        <img
+          src={props.data.image}
+          alt="Post Image"
+          onClick={handleFavoriteClick2}
+        />
       </div>
       <div className="post-footer">
         <div className="post-footerIcons">
@@ -65,7 +79,6 @@ const Post = (props) => {
             <BookmarkBorderIcon className="postIcon" />
           </div>
         </div>
-        <div className="like">{props.data.like} likes</div>
         <div className="post-userContent">
           <b>{props.data.user}:</b> {props.data.content}
         </div>

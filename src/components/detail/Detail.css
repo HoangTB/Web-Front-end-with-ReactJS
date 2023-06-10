@@ -98,26 +98,50 @@ textarea::placeholder {
 .detail-from-user{
     width: 50px !important;
     height: 50px !important;    
-    background-image: linear-gradient(to bottom right, #ff9900, #e0e54d9f);
+    background-image: linear-gradient(to bottom right, #ff7700, #ff861c,#ffffff);
     border: 2px solid rgba(255, 0, 0, 0.989);
     font-size: 11px !important;
+
+}
+
+.detail-from-user2{
+    width: 35px !important;
+    height: 35px !important;    
+    background-image: linear-gradient(to bottom right, #ff7700, #ff861c,#ffffff);
+    border: 2px solid rgba(255, 0, 0, 0.989);
+    font-size: 16px !important;
+    font-weight: 600;
 
 }
 .detail-form-name{
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: 500;
+    margin: 0;
+}
+.detail-form-name2{
+    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.detail-form-content{
+    font-size: 13px;
+    font-style: italic;
+    color: grey;
 }
 
 .comment-user{
     display: flex;
     align-items: center ;
     gap: 10px;
+    border-bottom: 1px solid rgb(237, 235, 235);
+    padding-bottom: 10px;
 }
 .comment{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 15px;
+    
 }
 .comment-footer{
     position: absolute;
@@ -168,7 +192,7 @@ textarea::placeholder {
     padding: 10px 10px;
     border-radius: 8px;
     display: flex;
-    margin: 20px 0 10px 0;
+    margin: 20px 0 20px 0;
 }
 
 .detail-textarea::placeholder {
@@ -207,10 +231,18 @@ textarea::placeholder {
     text-align: left !important;
     font-size: 14px;
     font-weight: 200;
+    border: none;
+    outline: none;
 }
 
 .detail-name-content{
     display: flex;
     gap: 6px;
+    align-items: center;
+}
+.detail-edit{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
 }
 /* detail */

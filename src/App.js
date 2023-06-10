@@ -1,10 +1,9 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import HomePages from './pages/HomePages';
 import LoginPages from './pages/LoginPages';
 import RegisterPages from './pages/RegisterPages'
-import Story from './components/story/Story';
 import ProfilePages from './pages/ProfilePages';
 import RequiredAuth from './components/requireAuth';
 import { useDispatch, } from 'react-redux';
@@ -13,6 +12,10 @@ import { CallListUsers } from './redux/reducer/ListUsersSlice';
 import { CallListPosts } from './redux/reducer/ListPostSlice';
 import UploadImage from './components/update/UploadImage';
 import { CallComments } from './redux/reducer/CommentSlice';
+import { CallFollows } from './redux/reducer/Follows';
+import PostAdmin from './components/admin/PostAdmin';
+import UserAdmin from './components/admin/UserAdmin';
+import RequiredAdmin from './components/requireAdmin';
 
 function App() {
 
@@ -43,16 +46,31 @@ function App() {
     getAllComments()
   }, [])
 
+
+  useEffect(() => {
+
+    const getAllFollows = async () => {
+
+      await dispatch(CallFollows()).unwrap();
+    };
+    getAllFollows();
+  }, [])
+
   return (
     <div className="App">
       <Routes>
+        <Route path="/" element={<Navigate to='/login' />} index />
         <Route element={<RequiredAuth />}>
-          <Route path="/" element={<HomePages />} />
+          <Route path="/home" element={<HomePages />} />
           <Route path="/profile/:id" element={<ProfilePages />} />
+          <Route path='/uploadImage' element={<UploadImage />} />
+          <Route element={<RequiredAdmin />}>
+            <Route path='/user-admin' element={< UserAdmin />} />
+            <Route path='/post-admin' element={< PostAdmin />} />
+          </Route>
         </Route>
         <Route path="/login" element={<LoginPages />} />
         <Route path="/register" element={<RegisterPages />} />
-        <Route path='/uploadImage' element={<UploadImage />} />
       </Routes>
     </div>
   );

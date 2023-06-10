@@ -36,10 +36,10 @@ axiosClient.interceptors.response.use(
         console.log("axiosClient - response error", error.response);
         const { config, status, data } = error.response;
 
-        if (config.url === "/register" && status === 400) {
+        if (config.url === "register" && status === 400) {
             throw new Error(data);
         }
-        if (config.url === "/login" && status === 404) {
+        if (config.url === "login" && status === 400) {
             throw new Error(data);
         }
         // Do something with response error

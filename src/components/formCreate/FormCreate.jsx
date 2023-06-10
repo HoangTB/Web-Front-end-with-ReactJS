@@ -5,11 +5,14 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import ListPosts from "../../api/ListPosts";
 import { CallListPosts } from "../../redux/reducer/ListPostSlice";
+import ConfirmNull from "../modal-confirm/ConfirmNull";
 const FormCreate = (props) => {
   const dispatch = useDispatch()
   const users = useSelector((state) => state.users);
   const [img, setImg] = useState("");
   const [text, setText] = useState("");
+  const [isShowFormNull, setIsShowFormNull] = useState(false);
+
   const handleChangePost = (e) =>{
     setText(e.target.value);
   }
@@ -19,15 +22,26 @@ const FormCreate = (props) => {
       userId:  users.id,
       content: text,
       image: img,
-      like:0
+      favorite:false,
     }
-    ListPosts.addPosts(contentPost).then();
-    dispatch(CallListPosts()).unwrap();
-    props.handelClose();
+    if(text !== '' && text !== null && img !== "" && img !== null){
+      ListPosts.addPosts(contentPost).then();
+      dispatch(CallListPosts()).unwrap();
+        props.handelClose();
+    } else{
+      setIsShowFormNull(!isShowFormNull);
+    }
+  
   }
+
+  const handleCloseForm = () => {
+    setIsShowFormNull(!isShowFormNull);
+  };
+
 
   return (
     <div className="modal-create">
+      {isShowFormNull && <ConfirmNull handleCloseForm={handleCloseForm} />}
       <div className="form-create">
         <AiFillCloseCircle
           className="icon-close"
@@ -49,7 +63,7 @@ const FormCreate = (props) => {
             />
             <label style={{ width: '100%', height: '100%' }} htmlFor="img">
               <img
-                style={{ height: "420px", width: "100%", objectFit: "cover", objectPosition: 'center', cursor:'pointer' }}
+                style={{ height: "400px", width: "100%", objectFit: "cover", objectPosition: 'center', cursor:'pointer',  borderRadius:"5px"}}
                 src={
                   img !== ""
                     ? img

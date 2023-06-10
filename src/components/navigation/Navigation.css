@@ -7,10 +7,22 @@
     height: 100%;
     border-right: 1px solid rgb(225, 225, 225);
   }
+
+  .sidenav.active{
+    display: flex;
+    align-items: center ;
+    width: 65px !important;
+  }
+  .sidenav-button.active {
+    max-width: 60px;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
   
   .sidenav-logo {
-    width: 110px;
-    margin: 30px;
+    width: 200px;
+    margin: 40px;
     outline: none;
   }
   .sidenav-icon{
@@ -26,7 +38,7 @@
     border-radius: 50%;
     object-fit: cover;
     font-size: 7px !important;
-    background-image: linear-gradient(to bottom right, #ff9900, #e0e54d9f);
+    background-image: linear-gradient(to bottom right, #ff7700, #ff861c,#ffffff);
     border: 2px solid rgba(255, 0, 0, 0.989);
    
   }
@@ -75,6 +87,10 @@
   .logout-button:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.424);
+  }
+
+  .sidenav-button.disabled span{
+      color: rgb(195, 192, 192)!important;
   }
   
   @media (max-width: 1480px) {

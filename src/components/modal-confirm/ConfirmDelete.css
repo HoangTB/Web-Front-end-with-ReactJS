@@ -1,0 +1,64 @@
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    scroll-behavior: smooth ;
+    transition: all 1s ease;
+    align-items: center;
+
+}
+.modal-delete{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+    height: 150px;
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+    z-index: 10;
+    border-radius: 8px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 14px 0;
+}
+
+.modal-delete p {
+    font-size: 19.5px;
+    font-weight: 600;
+}
+
+.modal-delete-button{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%; 
+    justify-content: center;
+}
+
+.modal-delete-button button {
+    background-image: linear-gradient(to bottom right, #ff7700, #ff861c,#ffffff);
+    color: white;
+    width: 80px;
+    border: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border:1px solid transparent;
+    transition: 0.2s;
+}
+
+.modal-delete-button button:hover {
+    border:1px solid orange;
+    color: orange;
+    background-image: none;
+    background-color: transparent;
+}
