@@ -43,7 +43,7 @@ function Login() {
           }, 2000);
           toast.success("Logged in successfully!", {
             position: "top-right",
-            autoClose: 3000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -54,7 +54,7 @@ function Login() {
         } else {
           toast.error("Account has been locked !", {
             position: "top-right",
-            autoClose: 3000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -67,7 +67,7 @@ function Login() {
         console.log(error);
         toast.error(error.message, {
           position: "top-right",
-          autoClose: 3000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

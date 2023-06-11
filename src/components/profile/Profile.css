@@ -211,7 +211,9 @@
 
 
 }
-
+.disableds{
+    color: rgb(173, 171, 171)!important;
+}
 
 .profile-image-contents:hover{
     transform: scale(1.02);

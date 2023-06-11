@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { AiFillDelete,AiFillEdit } from "react-icons/ai";
 import SlideBar from "./SliceBar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ListPosts from "../../api/ListPosts";
+import { CallListPosts } from "../../redux/reducer/ListPostSlice";
 
 const PostAdmin = () => {
+    const dispatch = useDispatch();
 const listPosts = useSelector((state) => state.listPosts);
 console.log(listPosts);
 
   const handleDeletePostAmin = (id) => {
-        ListPosts.deletePost(id).then();
+        ListPosts.deletePost(id).then(()=>
+        {
+            dispatch(CallListPosts()).unwrap();
+        });
   };
     return (
         <>

@@ -146,4 +146,10 @@
     font-size: 20px;
    
   }
+  .sidenav-logo-admin{
+    display: none;
+  }
+  .sign-out b{
+    display: none;
+  }
 }

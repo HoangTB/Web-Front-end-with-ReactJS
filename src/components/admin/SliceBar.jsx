@@ -2,14 +2,29 @@ import './SliceBar.css'
 import {BiLogOut} from 'react-icons/bi'
 import {RiAdminFill} from 'react-icons/ri'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 function SlideBar() {
   const navigate = useNavigate()
   const adminUser = JSON.parse(localStorage.getItem('users'));
   const router = useLocation();
   const HandleLogOut = () =>{
-    localStorage.removeItem('users');
-    localStorage.removeItem('access_token');
-    navigate('/login');
+
+   
+ 
+    setTimeout(() =>{
+      navigate('/login');
+      toast.success("Logout successful !", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }, 2000);
+    
 
   }
   return (

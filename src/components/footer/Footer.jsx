@@ -15,7 +15,7 @@ const Footer = () => {
             <li>Language</li>
             <li>Meta Verified</li>
         </ul>
-        <p className='content-footer'>© 2023 BAOGRAM FROM META</p>        
+        <p className='content-footer'>© 2023 BAOGRAM FROM RIKKEI ACADEMY</p>        
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./Register.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/reducer/UsersApiSlice';
 import { toast, ToastContainer } from 'react-toastify';
@@ -9,7 +9,8 @@ function Register() {
   const [errorUser, setErrorUser] = useState(false);
   const [errorFullName, setErrorFullName] = useState(false);
   const [errorPassword, setErrorPasword] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: '',
     user: '',
@@ -44,7 +45,7 @@ function Register() {
         await dispatch(register(inputValue)).unwrap();
         toast.success('Sign Up Success!', {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -52,13 +53,16 @@ function Register() {
           progress: undefined,
           theme: "light",
         });
-
+        setTimeout(()=>{
+          navigate("/login");
+        },2000);
+       
 
       } catch (error) {
 
         toast.error(error.message, {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

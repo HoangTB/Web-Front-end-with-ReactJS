@@ -31,21 +31,19 @@ const Profile = () => {
   const idDelete = useRef();
   const userMain = listUsers.find(
     (user) => Number(user.id) === Number(params.id));
-    console.log(params.id);
-  console.log("listUsers:",listUsers);
-  console.log("userMain:",userMain);
+
   const userSub = listFollows?.filter(
     (follow) => Number(follow.userId) === Number(params.id)
   );
-  console.log("userSub:",userSub);
+
   const postMain = listPosts.filter(
     (post) => Number(post.userId) === Number(params.id)
   );
-  console.log("postMain:",postMain);
+
   const followMain = listFollows?.filter(
     (follow) => Number(follow.userId) === Number(users.id)
   );
-  console.log("followMain:",followMain);
+
   const handelClose = () => {
     setIsShow(false);
   };
@@ -92,17 +90,19 @@ const Profile = () => {
     idDelete.current = id;
     setIsShowDel(true);
   };
+
+
   const handleFollow = () => {
     const indexUser = followMain[0]?.followId?.find(
       (item) => Number(item) === Number(userMain.id)
     );
-
     if (!indexUser) {
+
       const followForm = {
         userId: users?.id,
         followId: followMain.length === 0 ? [userMain?.id] : [...followMain[0]?.followId, userMain?.id],
       };
-      console.log(followForm);
+
       Follows.addFollow(followForm).then(() => {
         dispatch(CallFollows()).unwrap();
       });
@@ -120,10 +120,9 @@ const Profile = () => {
       });
     }
   };
-
   const idFollowCheck = followMain[0]?.followId?.map((item) => item);
 
-  
+
   return (
     <div className="profile">
       <ToastContainer />
@@ -158,8 +157,8 @@ const Profile = () => {
                     ? "Following"
                     : "Follow"}
                 </button>
-                <button>Message</button>
-                <button className="icon-add">
+                <button className="disableds">Message</button>
+                <button className="icon-add disableds">
                   <AiOutlineUserAdd />
                 </button>
               </div>
